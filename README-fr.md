@@ -1,18 +1,20 @@
+
+
 # Modal
 
-The Modal component is a reusable React component that displays a modal window with customisable content.
+Le composant Modal est un composant React réutilisable qui permet d'afficher une fenêtre modale avec un contenu personnalisable.
 
 ## Installation
 
-To install the npm package, use the following command:
+Pour installer le package npm, utilisez la commande suivante :
 
 ```
 npm install your-npm-package-name
 ```
 
-## Use
+## Utilisation
 
-To use the Modal component in your project, import it from the npm package and use it in your code like any other React component:
+Pour utiliser le composant Modal dans votre projet, importez-le à partir du package npm et utilisez-le dans votre code comme tout autre composant React :
 
 ```javascript
 import Modal from 'your-npm-package-name';
@@ -29,30 +31,31 @@ const App = () => {
       modalClassName="my-custom-modal-class"
       modalTitle="My Custom Modal Title"
     >
-      {/* Customisable modal content*/}
+      {/* Contenu personnalisable de la modal */}
     </Modal>
     // ...
   );
 };
 ```
+
 ## Props
 
-The Modal component accepts the following props:
+Le composant Modal accepte les props suivantes :
 
-- `isOpen` (boolean): Indicates whether the modal should be opened or closed.
-- onClose` (function): Callback function called when the user closes the modal.
-- children` (node): The customisable content of the modal.
-- `modalStyle` (object): An object containing inline styles for the modal.
-- `modalClassName` (string) : A string containing CSS class names for the modal.
-- `modalTitle` (string) : A string containing the title of the modal.
-- `firstName` (string) : A string containing the first name to be displayed in the modal.
-- `lastName` (string) : A string containing the last name to be displayed in the modal.
-- onSave` (function): A callback function called when the user clicks the `save` button.
-- onCancel` (function): Callback function called when the user clicks the "No thanks" button.
+- `isOpen` (booléen) : Indique si la modal doit être ouverte ou fermée.
+- `onClose` (fonction) : Fonction de rappel appelée lorsque l'utilisateur ferme la modal.
+- `children` (nœud) : Le contenu personnalisable de la modal.
+- `modalStyle` (objet) : Un objet contenant des styles en ligne pour la modal.
+- `modalClassName` (chaîne) : Une chaîne contenant des noms de classe CSS pour la modal.
+- `modalTitle` (chaîne) : Une chaîne contenant le titre de la modal.
+- `firstName` (chaîne) : Une chaîne contenant le prénom à afficher dans la modal.
+- `lastName` (chaîne) : Une chaîne contenant le nom à afficher dans la modal.
+- `onSave` (fonction) : Fonction de rappel appelée lorsque l'utilisateur clique sur le bouton "Enregistrer".
+- `onCancel` (fonction) : Fonction de rappel appelée lorsque l'utilisateur clique sur le bouton "Non merci".
 
-## Example
+## Exemple
 
-Here's an example of using the Modal component to display data from a form and allow the user to save or cancel changes:
+Voici un exemple d'utilisation du composant Modal pour afficher les données d'un formulaire et permettre à l'utilisateur d'enregistrer ou d'annuler les modifications :
 
 ```javascript
 import React, { useState } from "react";
@@ -76,13 +79,13 @@ const App = () => {
   };
 
   const handleSave = () => {
-    // code for saving form data
+    // code pour enregistrer les données du formulaire
     console.log("Données du formulaire enregistrées :", formData);
     handleCloseModal();
   };
 
   const handleCancel = () => {
-    // code to cancel changes to the form
+    // code pour annuler les modifications du formulaire
     console.log("Modifications du formulaire annulées");
     handleCloseModal();
   };
@@ -104,7 +107,7 @@ const App = () => {
         onSave={handleSave}
         onCancel={handleCancel}
       >
-
+        {/* Contenu personnalisable de la modal */}
       </Modal>
     </div>
   );
@@ -112,18 +115,19 @@ const App = () => {
 
 export default App;
 ```
-In this example, we have a `Form` component which manages the form data and a `handleFormData` function which is passed as a prop to the `Form` component to receive updates to the form data. When the user enters data into the form, the `Form` component calls the `handleFormData` function to update the `formData` state in the `App` component.
 
-We also have two functions, `handleSave` and `handleCancel`, which are passed as props to the `Save` and `No thanks` buttons in our Modal component. These functions are called when the user clicks on the buttons to save or cancel changes to the form.
+Dans cet exemple, nous avons un composant `Form` qui gère les données du formulaire et une fonction `handleFormData` qui est passée en tant que prop au composant `Form` pour recevoir les mises à jour des données du formulaire. Lorsque l'utilisateur saisit des données dans le formulaire, le composant `Form` appelle la fonction `handleFormData` pour mettre à jour l'état `formData` dans le composant `App`.
 
-Finally, we pass the form data as props to our Modal component to display the information in the modal.
+Nous avons également deux fonctions, `handleSave` et `handleCancel`, qui sont passées en tant que props aux boutons "Enregistrer" et "Non merci" de notre composant Modal. Ces fonctions sont appelées lorsque l'utilisateur clique sur les boutons pour enregistrer ou annuler les modifications du formulaire.
+
+Enfin, nous passons les données du formulaire en tant que props à notre composant Modal pour afficher les informations dans la modal.
 
 ## Licence
 
-This package is published under the ..... licence
----
-## Component Modal implementation :
+Ce package est publié sous la licence .....
 
+---
+## Implémentation du Component Modal :
 ```javascript
 import React, { useRef, useEffect } from "react";
 
