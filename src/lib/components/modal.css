@@ -1,0 +1,70 @@
+:root {
+  --color-main: #458846;
+  --color-light: #a0bfbf;
+  --color-dark: #3d5d5d;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  background-color: var(--color-main);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transition: transform 0.3s ease-out;
+}
+
+.modal.open {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-size: 24px;
+  color: white;
+}
+
+.close-button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+.modal-body {
+  margin-top: 10px;
+}
+
+.modal-message {
+  font-size: 18px;
+}
+
+/* Personnalisation des couleurs */
+.modal {
+  background-color: var(--color-light);
+}
+
+.modal-title {
+  color: var(--color-main);
+}
+
+.close-button {
+  color: var(--color-main);
+}
+
+.modal-body {
+  color: var(--color-dark);
+}

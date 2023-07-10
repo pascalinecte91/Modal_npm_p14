@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Modal from './lib/components/Modal';
 
-function App() {
+import './lib/components/modal.css';
+
+
+const App = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <button onClick={handleOpenModal}>Open Modal</button>
+      <Modal isOpen={modalOpen} onClose={handleCloseModal}>
+        <h2>hello , I am a reusable modal, open me with the "open modal" button and close me by clicking on the cross.</h2>
+      </Modal>
     </div>
   );
-}
+};
 
 export default App;

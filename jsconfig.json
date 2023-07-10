@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": "src",
+      "paths": {
+        "@components/modal": ["lib/components/modal"]
+      }
+    }
+  }
+  
