@@ -1,20 +1,19 @@
 {
-  "name": "@malaurycte/modal_npm_p14",
-  "description": "modal ",
+  "name": "modal-react-component",
+  "description": "modal open and close with cutomization ",
   "version": "0.1.0",
+  "main": "index.js",
+  "author": "banBy",
+  "files":["README.md"], 
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/pascalinecte91/Modal_npm_p14.git"
+    },
+
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": "^0.72.1",
-    "react-redux": "^8.1.1",
-    "react-scripts": "5.0.1",
-    "redux": "^4.2.1",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,6 +27,7 @@
       "react-app/jest"
     ]
   },
+  
   "browserslist": {
     "production": [
       ">0.2%",
@@ -42,5 +42,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+  },
+  "license": "MIT"
 }

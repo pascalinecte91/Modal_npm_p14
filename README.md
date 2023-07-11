@@ -6,8 +6,8 @@ The Modal component is a reusable React component that displays a modal window w
 
 To install the npm package, use the following command:
 
-```
-npm install your-npm-package-name
+```bash
+npm install @pascalinecte/modal-react-component
 ```
 
 ## Use
