@@ -1,30 +1,32 @@
 {
   "name": "@banBy91/modal-customize-react-component",
   "description": "modal open and close with cutomization with button ",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "author": "pascalinecte",
-   "license": "MIT",
-  "files":["dist","README.md"], 
-  "module":"dist/index.js",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "module": "dist/index.js",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/pascalinecte91/Modal_npm_p14.git"
-    },
-
+    "type": "git",
+    "url": "https://github.com/pascalinecte91/Modal_npm_p14.git"
+  },
   "devDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
-    "peerDependencies": {
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",  
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "clean": "rm -rf dist coverage",
     "clean:fix": "rm -rf node_modules coverage build dist docs package-lock.json"
   },
