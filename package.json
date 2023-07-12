@@ -1,7 +1,7 @@
 {
   "name": "modal-react-component",
   "description": "modal open and close with cutomization with button ",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "dist/index.js",
   "author": "pascalinecte",
   "license": "MIT",
