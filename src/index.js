@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.js';
 import './lib/components/Modal.js';
-import './lib/components/modal.css';
+import App from "lib/example/App.js";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

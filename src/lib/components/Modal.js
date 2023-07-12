@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 const Modal = ({
   isOpen,
   onClose,
-  children,
   modalStyle,
   modalClassName,
   modalTitle,

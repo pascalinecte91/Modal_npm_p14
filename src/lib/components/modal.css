@@ -79,3 +79,23 @@
   background-color: #f44336; /* fond rouge */
   color: white; /* texte blanc */
 }
+
+/*  BUTTON OPEN MODAL */ 
+
+.open-modal-button {
+  background-color: var(--color-main);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  left: 43%;
+  top: 4%;
+}
+
+.open-modal-button:hover,
+.open-modal-button:focus {
+  background-color: #3d5d5d;
+}

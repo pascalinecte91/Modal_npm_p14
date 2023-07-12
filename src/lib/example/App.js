@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Modal from '../lib/components/Modal';
+import Modal from "../components/Modal.js";
 // import Form from './Form'; // décommentez cette ligne pour importer votre composant Form
 
-import '../lib/components/modal.css';
+import '../components/modal.css';
 
 const Example = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -35,11 +35,11 @@ const Example = () => {
   return (
     <div className="app">
       {/* <Form handleFormData={handleFormData} /> décommentez cette ligne pour utiliser un composant Form */}
-      <button onClick={handleOpenModal}>Open Modal</button>
+      <button className="open-modal-button" onClick={handleOpenModal}>Open Modal</button>
       <Modal
         isOpen={modalOpen}
         onClose={handleCloseModal}
-        modalStyle={{ backgroundColor: 'red' }}
+        modalStyle={{ backgroundColor: 'white' }}
         modalClassName="my-custom-modal-class"
         modalTitle="My Custom Modal Title"
         // firstName={formData.firstName} // décommentez cette ligne pour passer le prénom en tant que prop

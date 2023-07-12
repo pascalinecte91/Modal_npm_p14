@@ -9,7 +9,7 @@ Le composant Modal est un composant React réutilisable qui permet d'afficher un
 Pour installer le package npm, utilisez la commande suivante :
 
 ```
-npm install @pascalinecte/modal-react-component
+npm i banby-modal-customize-react
 ```
 
 ## Utilisation

@@ -8,7 +8,6 @@ var _react = require("react");
 var Modal = function Modal(_ref) {
   var isOpen = _ref.isOpen,
     onClose = _ref.onClose,
-    children = _ref.children,
     modalStyle = _ref.modalStyle,
     modalClassName = _ref.modalClassName,
     modalTitle = _ref.modalTitle,

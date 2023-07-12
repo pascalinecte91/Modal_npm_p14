@@ -8,8 +8,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("C:/Users/Utilisateur/Documents/modal_npm_p14/node_modules/@babel/runtime/helpers/esm/slicedToArray.js"));
 var _react = _interopRequireWildcard(require("react"));
-var _Modal = _interopRequireDefault(require("../lib/components/Modal"));
-require("../lib/components/modal.css");
+var _Modal = _interopRequireDefault(require("../components/Modal.js"));
+require("../components/modal.css");
 // import Form from './Form'; // décommentez cette ligne pour importer votre composant Form
 
 var Example = function Example() {
@@ -45,12 +45,13 @@ var Example = function Example() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "app"
   }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "open-modal-button",
     onClick: handleOpenModal
   }, "Open Modal"), /*#__PURE__*/_react.default.createElement(_Modal.default, {
     isOpen: modalOpen,
     onClose: handleCloseModal,
     modalStyle: {
-      backgroundColor: 'red'
+      backgroundColor: 'white'
     },
     modalClassName: "my-custom-modal-class",
     modalTitle: "My Custom Modal Title"
