@@ -1,7 +1,7 @@
 {
   "name": "@banby/modal-customize-react-component",
   "description": "modal open and close with cutomization with button ",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index.js",
   "author": "pascalinecte",
   "license": "MIT",
