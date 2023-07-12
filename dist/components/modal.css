@@ -1,0 +1,81 @@
+:root {
+  --color-main: #636663;
+  --color-light: #a0bfbf;
+  --color-dark: #3d5d5d;
+  --color-black: black;
+}
+/* Modal */
+.modal {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 80%;
+  max-width: 350px;
+  height: auto;
+  background-color: var(--color-main);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transition: transform 0.3s ease-out;
+}
+
+.modal.open {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-content {
+  padding: 40px;
+}
+
+/* fermeture modal  X  */
+.close-button {
+  font-size: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--color-black);
+}
+.modal-title {
+  color: var(--color-main);
+}
+
+/* Ajout de styles pour les boutons "Enregistrer" et "Non merci" */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.info{
+  color:#636663;
+}
+
+.save-button,
+.cancel-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: #839b84; /* vert */
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #696b6a;
+}
+
+.cancel-button {
+  background-color: white;
+  color: black;
+  border: 1px solid #444444;
+}
+
+.cancel-button:hover {
+  background-color: #f44336; /* fond rouge */
+  color: white; /* texte blanc */
+}
