@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import "../components/modal.css";
 import Modal from "../components/Modal.js";
 // import Form from "./Form"; // décommentez cette ligne pour importer votre composant Form
 
-import "../components/modal.css";
+
 
 const Example = () => {
   const [modalOpen, setModalOpen] = useState(false);

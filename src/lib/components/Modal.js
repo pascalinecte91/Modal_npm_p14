@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import "./modal.css";
+
 
 const Modal = ({
   isOpen,
