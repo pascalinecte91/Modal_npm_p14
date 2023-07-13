@@ -31,9 +31,9 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   width: 80%;
-  max-width: 350px;
+  max-width: 500px;
   height: auto;
-  background-color: var(--color-main);
+  background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   transition: transform 0.3s ease-out;
@@ -64,13 +64,18 @@
 .info{
   color:#59ca59;
   font-size: 20px;
+  padding: 10px 5px 5px 0px;
+}
+p{
+  line-height: 60px;
 }
 /*************** BUTTONS  ***********/
 
 /*** 2 boutons ***/
 .modal-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-top: 35px;
 }
 
 /*** Forme 2 buttons ***/
