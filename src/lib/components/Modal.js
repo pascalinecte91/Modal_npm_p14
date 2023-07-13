@@ -39,7 +39,7 @@ const Modal = ({
       <button className="close-button" onClick={onClose}>
         <span>X</span>
       </button>
-      <p className="info">Save information ?</p>
+      <p className="info">Employee created ! Would you like to register identity ?</p>
       <p>LastName: {lastName}</p>
       <p>FirstName: {firstName}</p>
       <div className="modal-buttons">

@@ -51,7 +51,7 @@ var Modal = function Modal(_ref) {
       })
     }), /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
       className: "info",
-      children: "Save information ?"
+      children: "Employee created ! Would you like to register identity ?"
     }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
       children: ["LastName: ", lastName]
     }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
