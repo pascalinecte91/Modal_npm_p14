@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 const Modal = ({
   isOpen,
@@ -47,7 +48,7 @@ const Modal = ({
       </div>
     </div>
   );
-  
+
   return isOpen ? (
     <div
       className="modal-backdrop"
@@ -65,4 +66,17 @@ const Modal = ({
     </div>
   ) : null;
 };
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  modalStyle: PropTypes.object,
+  modalClassName: PropTypes.string,
+  modalTitle: PropTypes.string,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  onSave: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired
+};
+
 export default Modal;
