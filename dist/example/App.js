@@ -1,20 +1,26 @@
 "use strict";
 
-var _interopRequireWildcard = require("C:/Users/Utilisateur/Documents/modal_npm_p14/node_modules/@babel/runtime/helpers/interopRequireWildcard.js").default;
-var _interopRequireDefault = require("C:/Users/Utilisateur/Documents/modal_npm_p14/node_modules/@babel/runtime/helpers/interopRequireDefault.js").default;
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _slicedToArray2 = _interopRequireDefault(require("C:/Users/Utilisateur/Documents/modal_npm_p14/node_modules/@babel/runtime/helpers/esm/slicedToArray.js"));
 var _react = _interopRequireWildcard(require("react"));
 var _Modal = _interopRequireDefault(require("../components/Modal.js"));
 require("../components/modal.css");
-// import Form from './Form'; // décommentez cette ligne pour importer votre composant Form
-
+var _jsxRuntime = require("react/jsx-runtime");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; } // import Form from './Form'; // décommentez cette ligne pour importer votre composant Form
 var Example = function Example() {
   var _useState = (0, _react.useState)(false),
-    _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+    _useState2 = _slicedToArray(_useState, 2),
     modalOpen = _useState2[0],
     setModalOpen = _useState2[1];
   // const [formData, setFormData] = useState({}); // décommentez cette ligne pour utiliser les données du formulaire
@@ -42,24 +48,30 @@ var Example = function Example() {
   //   handleCloseModal();
   // };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "app"
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    className: "open-modal-button",
-    onClick: handleOpenModal
-  }, "Open Modal"), /*#__PURE__*/_react.default.createElement(_Modal.default, {
-    isOpen: modalOpen,
-    onClose: handleCloseModal,
-    modalStyle: {
-      backgroundColor: 'white'
-    },
-    modalClassName: "my-custom-modal-class",
-    modalTitle: "My Custom Modal Title"
-    // firstName={formData.firstName} // décommentez cette ligne pour passer le prénom en tant que prop
-    // lastName={formData.lastName} // décommentez cette ligne pour passer le nom en tant que prop
-    // onSave={handleSave} // décommentez cette ligne pour passer la fonction de rappel pour le bouton "Enregistrer"
-    // onCancel={handleCancel} // décommentez cette ligne pour passer la fonction de rappel pour le bouton "Non merci"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "hello , I am a reusable modal, open me with the \"open modal\" button and close me by clicking on the cross.")));
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    className: "app",
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+      className: "open-modal-button",
+      onClick: handleOpenModal,
+      children: "Open Modal"
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Modal.default, {
+      isOpen: modalOpen,
+      onClose: handleCloseModal,
+      modalStyle: {
+        backgroundColor: 'white'
+      },
+      modalClassName: "my-custom-modal-class",
+      modalTitle: "My Custom Modal Title"
+      // firstName={formData.firstName} // décommentez cette ligne pour passer le prénom en tant que prop
+      // lastName={formData.lastName} // décommentez cette ligne pour passer le nom en tant que prop
+      // onSave={handleSave} // décommentez cette ligne pour passer la fonction de rappel pour le bouton "Enregistrer"
+      // onCancel={handleCancel} // décommentez cette ligne pour passer la fonction de rappel pour le bouton "Non merci"
+      ,
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)("h2", {
+        children: "hello , I am a reusable modal, open me with the \"open modal\" button and close me by clicking on the cross."
+      })
+    })]
+  });
 };
 var _default = Example;
 exports.default = _default;

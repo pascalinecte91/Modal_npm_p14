@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = require("react");
+var _jsxRuntime = require("react/jsx-runtime");
 var Modal = function Modal(_ref) {
   var isOpen = _ref.isOpen,
     onClose = _ref.onClose,
@@ -31,36 +32,51 @@ var Modal = function Modal(_ref) {
       onClose();
     }
   };
-  var modalContent = /*#__PURE__*/React.createElement("div", {
-    className: "modal-content"
-  }, modalTitle && /*#__PURE__*/React.createElement("h2", {
-    className: "modal-title"
-  }, modalTitle), /*#__PURE__*/React.createElement("button", {
-    className: "close-button",
-    onClick: onClose
-  }, /*#__PURE__*/React.createElement("span", null, "X")), /*#__PURE__*/React.createElement("p", {
-    className: "info"
-  }, "Save information ?"), /*#__PURE__*/React.createElement("p", null, "LastName: ", lastName), /*#__PURE__*/React.createElement("p", null, "FirstName: ", firstName), /*#__PURE__*/React.createElement("div", {
-    className: "modal-buttons"
-  }, /*#__PURE__*/React.createElement("button", {
-    className: "save-button",
-    onClick: onSave
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fa fa-save"
-  }), " Register"), /*#__PURE__*/React.createElement("button", {
-    className: "cancel-button",
-    onClick: onCancel
-  }, "No Thanks")));
-  return isOpen ? /*#__PURE__*/React.createElement("div", {
+  var modalContent = /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+    className: "modal-content",
+    children: [modalTitle && /*#__PURE__*/(0, _jsxRuntime.jsx)("h2", {
+      className: "modal-title",
+      children: modalTitle
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+      className: "close-button",
+      onClick: onClose,
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
+        children: "X"
+      })
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+      className: "info",
+      children: "Save information ?"
+    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
+      children: ["LastName: ", lastName]
+    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
+      children: ["FirstName: ", firstName]
+    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+      className: "modal-buttons",
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
+        className: "save-button",
+        onClick: onSave,
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("i", {
+          className: "fa fa-save"
+        }), " Register"]
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+        className: "cancel-button",
+        onClick: onCancel,
+        children: "No Thanks"
+      })]
+    })]
+  });
+  return isOpen ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
     className: "modal-backdrop",
-    onClick: handleBackdropClick
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "modal open ".concat(modalClassName),
-    style: modalStyle,
-    "aria-modal": "true",
-    tabIndex: "-1",
-    ref: modalRef
-  }, modalContent)) : null;
+    onClick: handleBackdropClick,
+    children: /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+      className: "modal open ".concat(modalClassName),
+      style: modalStyle,
+      "aria-modal": "true",
+      tabIndex: "-1",
+      ref: modalRef,
+      children: modalContent
+    })
+  }) : null;
 };
 var _default = Modal;
 exports.default = _default;

@@ -1,6 +1,5 @@
 "use strict";
 
-var _interopRequireDefault = require("C:/Users/Utilisateur/Documents/modal_npm_p14/node_modules/@babel/runtime/helpers/interopRequireDefault.js").default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -11,3 +10,4 @@ Object.defineProperty(exports, "Modal", {
   }
 });
 var _Modal = _interopRequireDefault(require("./components/Modal.js"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
