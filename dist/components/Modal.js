@@ -38,39 +38,6 @@ var Modal = function Modal(_ref) {
       onClose();
     }
   };
-  var modalContent = /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-    className: "modal-content",
-    children: [modalTitle && /*#__PURE__*/(0, _jsxRuntime.jsx)("h2", {
-      className: "modal-title",
-      children: modalTitle
-    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-      className: "close-button",
-      onClick: onClose,
-      children: /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
-        children: "X"
-      })
-    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
-      className: "info",
-      children: "Employee created ! Would you like to register identity ?"
-    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
-      children: ["LastName: ", lastName]
-    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
-      children: ["FirstName: ", firstName]
-    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-      className: "modal-buttons",
-      children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
-        className: "save-button",
-        onClick: onSave,
-        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("i", {
-          className: "fa fa-save"
-        }), " Register"]
-      }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-        className: "cancel-button",
-        onClick: onCancel,
-        children: "No Thanks"
-      })]
-    })]
-  });
   return isOpen ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
     className: "modal-backdrop",
     onClick: handleBackdropClick,
@@ -80,7 +47,41 @@ var Modal = function Modal(_ref) {
       "aria-modal": "true",
       tabIndex: "-1",
       ref: modalRef,
-      children: modalContent
+      children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        className: "modal-content",
+        children: [modalTitle && /*#__PURE__*/(0, _jsxRuntime.jsx)("h2", {
+          className: "modal-title",
+          children: modalTitle
+        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+          className: "close-button",
+          onClick: onClose,
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
+            children: "X"
+          })
+        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
+          className: "info",
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
+            children: "You can choose your props !"
+          })
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
+          children: ["LastName: ", lastName]
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
+          children: ["FirstName: ", firstName]
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          className: "modal-buttons",
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
+            className: "save-button",
+            onClick: onSave,
+            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("i", {
+              className: "fa fa-save"
+            }), " Register"]
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "cancel-button",
+            onClick: onCancel,
+            children: "No Thanks"
+          })]
+        })]
+      })
     })
   }) : null;
 };

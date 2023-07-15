@@ -17,25 +17,31 @@ npm i banby-modal-customize-react
 Pour utiliser le composant Modal dans votre projet, importez-le à partir du package npm et utilisez-le dans votre code comme tout autre composant React :
 
 ```javascript
-import Modal from 'modal-react-component';
+   import React from "react";
+   import Modal from "modal-plugin";
 
-const App = () => {
-  // ...
+   const App = () => {
+     const handleOpenModal = () => {
+       // Logique pour ouvrir le modal
+     };
 
-  return (
-    // ...
-    <Modal
-      isOpen={modalOpen}
-      onClose={handleCloseModal}
-      modalStyle={{ backgroundColor: "white" }}
-      modalClassName="my-custom-modal-class"
-      modalTitle="My Custom Modal Title"
-    >
-      {/* Contenu personnalisable de la modal */}
-    </Modal>
-    // ...
-  );
-};
+     const handleCloseModal = () => {
+       // Logique pour fermer le modal
+     };
+
+     return (
+       <div>
+         <button onClick={handleOpenModal}>Ouvrir le modal</button>
+         <Modal isOpen={true} onClose={handleCloseModal}>
+           <h2>Contenu du modal</h2>
+           <p>Ceci est un exemple de contenu personnalisé pour le modal.</p>
+         </Modal>
+       </div>
+     );
+   };
+
+   export default App;
+
 ```
 
 ## Props
@@ -44,7 +50,6 @@ Le composant Modal accepte les props suivantes :
 
 - `isOpen` (booléen) : Indique si la modal doit être ouverte ou fermée.
 - `onClose` (fonction) : Fonction de rappel appelée lorsque l'utilisateur ferme la modal.
-- `children` (nœud) : Le contenu personnalisable de la modal.
 - `modalStyle` (objet) : Un objet contenant des styles en ligne pour la modal.
 - `modalClassName` (chaîne) : Une chaîne contenant des noms de classe CSS pour la modal.
 - `modalTitle` (chaîne) : Une chaîne contenant le titre de la modal.
@@ -53,14 +58,20 @@ Le composant Modal accepte les props suivantes :
 - `onSave` (fonction) : Fonction de rappel appelée lorsque l'utilisateur clique sur le bouton "Enregistrer".
 - `onCancel` (fonction) : Fonction de rappel appelée lorsque l'utilisateur clique sur le bouton "Non merci".
 
-## Exemple
+## Exemple de d'utilisation 
 
 Voici un exemple d'utilisation du composant Modal pour afficher les données d'un formulaire et permettre à l'utilisateur d'enregistrer ou d'annuler les modifications :
+
+
+Assurez-vous de remplacer `'your-npm-package-name'` par le nom réel de votre package npm dans l'exemple d'utilisation du composant Modal.
 
 ```javascript
 import React, { useState } from "react";
 import Modal from 'your-npm-package-name';
-import Form from "./Form";
+import Form from "./Form"; // Votre formulaire
+
+// ... Votre code ici
+
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -92,7 +103,8 @@ const App = () => {
 
   return (
     <div className="app">
-      <Form handleFormData={handleFormData} />
+        
+      {/*<Form handleFormData={handleFormData} /> votre component */}
       <button className="open-modal-button" onClick={handleOpenModal}>
         Open Modal
       </button>
@@ -105,8 +117,7 @@ const App = () => {
         firstName={formData.firstName}
         lastName={formData.lastName}
         onSave={handleSave}
-        onCancel={handleCancel}
-      >
+        onCancel={handleCancel}>
         {/* Contenu personnalisable de la modal */}
       </Modal>
     </div>
@@ -122,84 +133,12 @@ Nous avons également deux fonctions, `handleSave` et `handleCancel`, qui sont p
 
 Enfin, nous passons les données du formulaire en tant que props à notre composant Modal pour afficher les informations dans la modal.
 
+---
 ## Licence
 
-Ce package est publié sous la licence .....
+Ce package est distribué sous la [LICENCE](https://opensource.org/licenses/MIT) MIT. Veuillez consulter le fichier LICENSE pour plus d'informations.
 
----
-## Implémentation du Component Modal :
-```javascript
-import React, { useRef, useEffect } from "react";
 
-const Modal = ({
-  isOpen,
-  onClose,
-  children,
-  modalStyle,
-  modalClassName,
-  modalTitle,
-  firstName,
-  lastName,
-  onSave,
-  onCancel
-}) => {
-  const modalRef = useRef(null);
-  const triggerRef = useRef(null);
 
-  useEffect(() => {
-    if (isOpen) {
-      triggerRef.current = document.activeElement;
-      modalRef.current.focus();
-    } else if (triggerRef.current) {
-      triggerRef.current.focus();
-      triggerRef.current = null;
-    }
-  }, [isOpen]);
-
-  const handleBackdropClick = (event) => {
-    if (event.target === event.currentTarget) {
-      onClose();
-    }
-  };
-
-  const modalContent = (
-    <div className="modal-content">
-      {modalTitle && <h2 className="modal-title">{modalTitle}</h2>}
-      <button className="close-button" onClick={onClose}>
-        <span>X</span>
-      </button>
-      {firstName && lastName && (
-        <>
-          <p>Enregistrez les informations ?</p>
-          <p>Nom: {lastName}</p>
-          <p>Prénom: {firstName}</p>
-          <div className="modal-buttons">
-            <button className="save-button" onClick={onSave}>Enregistrer</button>
-            <button className="cancel-button" onClick={onCancel}>Non merci</button>
-          </div>
-        </>
-      )}
-      {children}
-    </div>
-  );
-  
-  return isOpen ? (
-    <div
-      className="modal-backdrop"
-      onClick={handleBackdropClick}
-    >
-      <div
-        className={`modal open ${modalClassName}`}
-        style={modalStyle}
-        aria-modal="true"
-        tabIndex="-1"
-        ref={modalRef}
-      >
-        {modalContent}
-      </div>
-    </div>
-  ) : null;
-};
-export default Modal;
-
-```
+<div style="text-align: center; width: 50%">
+  <img src="public/modal.png" alt="logo" style="border-radius: 10px;">

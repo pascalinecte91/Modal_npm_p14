@@ -59,16 +59,16 @@
 /***************  TEXT ********/
 .modal-title {
   color: var(--color-main);
+  text-align: center;
 }
 
 .info{
   color:#59ca59;
   font-size: 20px;
   padding: 10px 5px 5px 0px;
+  text-align: center;
 }
-p{
-  line-height: 60px;
-}
+
 /*************** BUTTONS  ***********/
 
 /*** 2 boutons ***/
