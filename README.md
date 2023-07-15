@@ -63,7 +63,7 @@ Le composant Modal accepte les props suivantes :
 Voici un exemple d'utilisation du composant Modal pour afficher les données d'un formulaire et permettre à l'utilisateur d'enregistrer ou d'annuler les modifications :
 
 
-Assurez-vous de remplacer `'your-npm-package-name'` par le nom réel de votre package npm dans l'exemple d'utilisation du composant Modal.
+Assurez-vous de remplacer `'your-npm-package-name'` par le nom réel de votre package npm dans l'exemple d'utilisation du composant Modal. m à j
 
 ```javascript
 import React, { useState } from "react";
