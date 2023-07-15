@@ -1,7 +1,7 @@
 {
   "name": "banby-modal-customize-react",
   "description": "modal open and close with cutomization with button ",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "main": "dist/index.js",
   "author": "pascalinecte",
   "license": "MIT",
