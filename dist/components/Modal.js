@@ -19,9 +19,9 @@ var Modal = function Modal(_ref) {
     modalClassName = _ref.modalClassName,
     modalTitle = _ref.modalTitle,
     firstName = _ref.firstName,
-    lastName = _ref.lastName,
     onSave = _ref.onSave,
-    onCancel = _ref.onCancel;
+    onCancel = _ref.onCancel,
+    employeeCreated = _ref.employeeCreated;
   var modalRef = (0, _react.useRef)(null);
   var triggerRef = (0, _react.useRef)(null);
   (0, _react.useEffect)(function () {
@@ -34,15 +34,15 @@ var Modal = function Modal(_ref) {
     }
   }, [isOpen]);
   var handleBackdropClick = function handleBackdropClick(event) {
-    if (event.target === event.currentTarget) {
+    if (event.target === event.currentTarget || event.target.className === "close-button") {
       onClose();
     }
   };
   return isOpen ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-    className: "modal-backdrop",
+    className: "modal-backdrop ".concat(isOpen ? "open" : ""),
     onClick: handleBackdropClick,
     children: /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-      className: "modal open ".concat(modalClassName),
+      className: "modal ".concat(isOpen ? "open" : "", " ").concat(modalClassName),
       style: modalStyle,
       "aria-modal": "true",
       tabIndex: "-1",
@@ -58,13 +58,8 @@ var Modal = function Modal(_ref) {
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
             children: "X"
           })
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-          className: "info",
-          children: /*#__PURE__*/(0, _jsxRuntime.jsx)("p", {
-            children: "You can choose your props !"
-          })
-        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
-          children: ["LastName: ", lastName]
+        }), employeeCreated && /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
+          children: ["Votre employ\xE9: ", firstName, " a bien \xE9t\xE9 cr\xE9\xE9"]
         }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
           children: ["FirstName: ", firstName]
         }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
@@ -78,7 +73,7 @@ var Modal = function Modal(_ref) {
           }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
             className: "cancel-button",
             onClick: onCancel,
-            children: "No Thanks"
+            children: "Cancel"
           })]
         })]
       })
@@ -94,7 +89,8 @@ Modal.propTypes = {
   firstName: _propTypes.default.string,
   lastName: _propTypes.default.string,
   onSave: _propTypes.default.func.isRequired,
-  onCancel: _propTypes.default.func.isRequired
+  onCancel: _propTypes.default.func.isRequired,
+  employeeCreated: _propTypes.default.bool.isRequired
 };
 var _default = Modal;
 exports.default = _default;

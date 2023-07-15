@@ -9,9 +9,9 @@ const Modal = ({
   modalClassName,
   modalTitle,
   firstName,
-  lastName,
   onSave,
-  onCancel
+  onCancel,
+  employeeCreated
 }) => {
   const modalRef = useRef(null);
   const triggerRef = useRef(null);
@@ -27,15 +27,15 @@ const Modal = ({
   }, [isOpen]);
 
   const handleBackdropClick = (event) => {
-    if (event.target === event.currentTarget) {
+    if (event.target === event.currentTarget || event.target.className === "close-button") {
       onClose();
     }
   };
 
   return isOpen ? (
-    <div className="modal-backdrop" onClick={handleBackdropClick}>
+    <div className={`modal-backdrop ${isOpen ? "open" : ""}`} onClick={handleBackdropClick}>
       <div
-        className={`modal open ${modalClassName}`}
+        className={`modal ${isOpen ? "open" : ""} ${modalClassName}`}
         style={modalStyle}
         aria-modal="true"
         tabIndex="-1"
@@ -44,20 +44,14 @@ const Modal = ({
         <div className="modal-content">
           {modalTitle && <h2 className="modal-title">{modalTitle}</h2>}
           <button className="close-button" onClick={onClose}>
-            <span>X</span>
-          </button>
-          <div className="info">
-            <p>You can choose your props !</p>
-          </div>
-          <p>LastName: {lastName}</p>
+            <span>X</span></button>
+          {employeeCreated && <p>Votre employé: {firstName} a bien été créé</p>}
           <p>FirstName: {firstName}</p>
           <div className="modal-buttons">
             <button className="save-button" onClick={onSave}>
               <i className="fa fa-save"></i> Register
             </button>
-            <button className="cancel-button" onClick={onCancel}>
-              No Thanks
-            </button>
+            <button className="cancel-button" onClick={onCancel}>Cancel</button>
           </div>
         </div>
       </div>
@@ -74,7 +68,8 @@ Modal.propTypes = {
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   onSave: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired
+  onCancel: PropTypes.func.isRequired,
+  employeeCreated: PropTypes.bool.isRequired
 };
 
 export default Modal;

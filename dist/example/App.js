@@ -23,6 +23,10 @@ var App = function App() {
     _useState2 = _slicedToArray(_useState, 2),
     modalOpen = _useState2[0],
     setModalOpen = _useState2[1];
+  var _useState3 = (0, _react.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    employeeCreated = _useState4[0],
+    setEmployeeCreated = _useState4[1];
   var handleOpenModal = function handleOpenModal() {
     setModalOpen(true);
   };
@@ -30,6 +34,7 @@ var App = function App() {
     setModalOpen(false);
   };
   var handleSave = function handleSave() {
+    setEmployeeCreated(true);
     handleCloseModal();
   };
   var handleCancel = function handleCancel() {
@@ -51,7 +56,8 @@ var App = function App() {
       modalClassName: "my-custom-modal-class",
       modalTitle: "I'm a modal to customize !",
       onSave: handleSave,
-      onCancel: handleCancel
+      onCancel: handleCancel,
+      employeeCreated: employeeCreated
     })]
   });
 };

@@ -4,6 +4,9 @@ import Modal from "../components/Modal.js";
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [employeeCreated, setEmployeeCreated] = useState(false);
+ 
+
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -14,6 +17,7 @@ const App = () => {
   };
 
   const handleSave = () => {
+    setEmployeeCreated(true);
     handleCloseModal();
   };
 
@@ -36,6 +40,7 @@ const App = () => {
           modalTitle="I'm a modal to customize !"
           onSave={handleSave}
           onCancel={handleCancel}
+          employeeCreated={employeeCreated}
         >
         </Modal>
       )}
