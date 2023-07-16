@@ -48,7 +48,7 @@ const Modal = ({
           {modalTitle && <h2 className="modal-title">{modalTitle}</h2>}
           <button className="close-button" onClick={onClose}>
             <span>X</span></button>
-          {employeeCreated && <p className="modal-identity">Votre employé: {firstName}, {lastName} a bien été créé</p>}
+          {employeeCreated && <p className="modal-identity">would you like to register {firstName}, {lastName} or start again</p>}
           <div className="modal-buttons">
             <button className="save-button" onClick={onSave}>
               <i className="fa fa-save"></i> Register

@@ -61,7 +61,7 @@ var Modal = function Modal(_ref) {
           })
         }), employeeCreated && /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
           className: "modal-identity",
-          children: ["Votre employ\xE9: ", firstName, ", ", lastName, " a bien \xE9t\xE9 cr\xE9\xE9"]
+          children: ["would you like to register ", firstName, ", ", lastName, " or start again"]
         }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
           className: "modal-buttons",
           children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {

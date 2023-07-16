@@ -5,7 +5,6 @@ import Modal from "../components/Modal.js";
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [employeeCreated, setEmployeeCreated] = useState(false);
- 
 
 
   const handleOpenModal = () => {
@@ -41,7 +40,7 @@ const App = () => {
           onSave={handleSave}
           onCancel={handleCancel}
           employeeCreated={employeeCreated}
-          fir
+         
         >
         </Modal>
       )}
