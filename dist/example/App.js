@@ -57,7 +57,8 @@ var App = function App() {
       modalTitle: "I'm a modal to customize !",
       onSave: handleSave,
       onCancel: handleCancel,
-      employeeCreated: employeeCreated
+      employeeCreated: employeeCreated,
+      fir: true
     })]
   });
 };

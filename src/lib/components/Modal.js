@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import "./modal.css";
 
+
 const Modal = ({
   isOpen,
   onClose,
@@ -9,10 +10,12 @@ const Modal = ({
   modalClassName,
   modalTitle,
   firstName,
+  lastName,
   onSave,
   onCancel,
   employeeCreated
 }) => {
+ 
   const modalRef = useRef(null);
   const triggerRef = useRef(null);
 
@@ -45,13 +48,12 @@ const Modal = ({
           {modalTitle && <h2 className="modal-title">{modalTitle}</h2>}
           <button className="close-button" onClick={onClose}>
             <span>X</span></button>
-          {employeeCreated && <p>Votre employé: {firstName} a bien été créé</p>}
-          <p>FirstName: {firstName}</p>
+          {employeeCreated && <p className="modal-identity">Votre employé: {firstName}, {lastName} a bien été créé</p>}
           <div className="modal-buttons">
             <button className="save-button" onClick={onSave}>
               <i className="fa fa-save"></i> Register
             </button>
-            <button className="cancel-button" onClick={onCancel}>Cancel</button>
+            <button className="cancel-button" onClick={onCancel}><i className="fas fa-trash"></i> Cancel</button>
           </div>
         </div>
       </div>

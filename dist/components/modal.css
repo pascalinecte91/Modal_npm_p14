@@ -67,3 +67,16 @@
 .cancel-button {
     background-color:#ff5e5e
 }
+
+.app {
+  display: flex;
+  position: absolute;
+  left: 50%;
+}
+.open-modal-button {
+  background-color: rgb(156, 156, 168);
+  border-radius: 5px;
+}
+.open-modal-button:focus {
+  background-color: #a7ff5e;
+}

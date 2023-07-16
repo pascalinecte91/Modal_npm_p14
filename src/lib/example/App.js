@@ -41,6 +41,7 @@ const App = () => {
           onSave={handleSave}
           onCancel={handleCancel}
           employeeCreated={employeeCreated}
+          fir
         >
         </Modal>
       )}

@@ -19,6 +19,7 @@ var Modal = function Modal(_ref) {
     modalClassName = _ref.modalClassName,
     modalTitle = _ref.modalTitle,
     firstName = _ref.firstName,
+    lastName = _ref.lastName,
     onSave = _ref.onSave,
     onCancel = _ref.onCancel,
     employeeCreated = _ref.employeeCreated;
@@ -59,9 +60,8 @@ var Modal = function Modal(_ref) {
             children: "X"
           })
         }), employeeCreated && /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
-          children: ["Votre employ\xE9: ", firstName, " a bien \xE9t\xE9 cr\xE9\xE9"]
-        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
-          children: ["FirstName: ", firstName]
+          className: "modal-identity",
+          children: ["Votre employ\xE9: ", firstName, ", ", lastName, " a bien \xE9t\xE9 cr\xE9\xE9"]
         }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
           className: "modal-buttons",
           children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
@@ -70,10 +70,12 @@ var Modal = function Modal(_ref) {
             children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("i", {
               className: "fa fa-save"
             }), " Register"]
-          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+          }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
             className: "cancel-button",
             onClick: onCancel,
-            children: "Cancel"
+            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("i", {
+              className: "fas fa-trash"
+            }), " Cancel"]
           })]
         })]
       })
