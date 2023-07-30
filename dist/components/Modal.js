@@ -61,7 +61,9 @@ var Modal = function Modal(_ref) {
           })
         }), employeeCreated && /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
           className: "modal-identity",
-          children: ["would you like to register ", firstName, ", ", lastName, " or start again"]
+          children: ["Would you like to register", /*#__PURE__*/(0, _jsxRuntime.jsxs)("strong", {
+            children: [firstName, " ", lastName, " "]
+          }), " or start again"]
         }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
           className: "modal-buttons",
           children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
@@ -90,9 +92,9 @@ Modal.propTypes = {
   modalTitle: _propTypes.default.string,
   firstName: _propTypes.default.string,
   lastName: _propTypes.default.string,
-  onSave: _propTypes.default.func.isRequired,
-  onCancel: _propTypes.default.func.isRequired,
-  employeeCreated: _propTypes.default.bool.isRequired
+  onSave: _propTypes.default.func,
+  onCancel: _propTypes.default.func,
+  employeeCreated: _propTypes.default.bool
 };
 var _default = Modal;
 exports.default = _default;

@@ -26,7 +26,7 @@ Voici un exemple de code qui montre comment utiliser le composant Modal dans un 
 
 ```javascript
    import React, { useState } from "react";
-import Modal from "modal-plugin";
+   import Modal from "banby-modal-customize-react";
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);

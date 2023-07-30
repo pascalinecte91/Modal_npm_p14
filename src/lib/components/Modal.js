@@ -48,10 +48,12 @@ const Modal = ({
           {modalTitle && <h2 className="modal-title">{modalTitle}</h2>}
           <button className="close-button" onClick={onClose}>
             <span>X</span></button>
-          {employeeCreated && <p className="modal-identity">would you like to register {firstName}, {lastName} or start again</p>}
+          {employeeCreated && <p className="modal-identity">Would you like to register<strong>
+          {firstName} {lastName} </strong> or start again</p>}
           <div className="modal-buttons">
             <button className="save-button" onClick={onSave}>
               <i className="fa fa-save"></i> Register
+
             </button>
             <button className="cancel-button" onClick={onCancel}><i className="fas fa-trash"></i> Cancel</button>
           </div>
@@ -69,9 +71,9 @@ Modal.propTypes = {
   modalTitle: PropTypes.string,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
-  onSave: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired,
-  employeeCreated: PropTypes.bool.isRequired
+  onSave: PropTypes.func,
+  onCancel: PropTypes.func,
+  employeeCreated: PropTypes.bool
 };
 
 export default Modal;
