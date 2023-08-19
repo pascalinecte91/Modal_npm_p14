@@ -18,11 +18,13 @@ var Modal = function Modal(_ref) {
     modalStyle = _ref.modalStyle,
     modalClassName = _ref.modalClassName,
     modalTitle = _ref.modalTitle,
+    _ref$showButtons = _ref.showButtons,
+    showButtons = _ref$showButtons === void 0 ? false : _ref$showButtons,
     firstName = _ref.firstName,
     lastName = _ref.lastName,
     onSave = _ref.onSave,
     onCancel = _ref.onCancel,
-    employeeCreated = _ref.employeeCreated;
+    actionLabel = _ref.actionLabel;
   var modalRef = (0, _react.useRef)(null);
   var triggerRef = (0, _react.useRef)(null);
   (0, _react.useEffect)(function () {
@@ -59,25 +61,27 @@ var Modal = function Modal(_ref) {
           children: /*#__PURE__*/(0, _jsxRuntime.jsx)("span", {
             children: "X"
           })
-        }), employeeCreated && /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
-          className: "modal-identity",
-          children: ["Would you like to register", /*#__PURE__*/(0, _jsxRuntime.jsxs)("strong", {
-            children: [firstName, " ", lastName, " "]
-          }), " or start again"]
-        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-          className: "modal-buttons",
-          children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
-            className: "save-button",
-            onClick: onSave,
-            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("i", {
-              className: "fa fa-save"
-            }), " Register"]
-          }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
-            className: "cancel-button",
-            onClick: onCancel,
-            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("i", {
-              className: "fas fa-trash"
-            }), " Cancel"]
+        }), " ", showButtons && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+          children: [actionLabel && /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
+            className: "modal-identity",
+            children: ["Would you like to ", actionLabel, " ", /*#__PURE__*/(0, _jsxRuntime.jsxs)("strong", {
+              children: [" ", firstName, " ", lastName, " "]
+            }), " "]
+          }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+            className: "modal-buttons",
+            children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
+              className: "save-button",
+              onClick: onSave,
+              children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("i", {
+                className: "fa fa-save"
+              }), " Register"]
+            }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("button", {
+              className: "cancel-button",
+              onClick: onCancel,
+              children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("i", {
+                className: "fas fa-trash"
+              }), " Cancel"]
+            })]
           })]
         })]
       })
@@ -90,11 +94,12 @@ Modal.propTypes = {
   modalStyle: _propTypes.default.object,
   modalClassName: _propTypes.default.string,
   modalTitle: _propTypes.default.string,
+  showButtons: _propTypes.default.bool,
   firstName: _propTypes.default.string,
   lastName: _propTypes.default.string,
   onSave: _propTypes.default.func,
   onCancel: _propTypes.default.func,
-  employeeCreated: _propTypes.default.bool
+  actionLabel: _propTypes.default.bool
 };
 var _default = Modal;
 exports.default = _default;

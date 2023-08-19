@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import "../components/modal.css";
+import "../components/modal.css"; // Assurez-vous que le chemin vers le fichier CSS est correct
 import Modal from "../components/Modal.js";
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [employeeCreated, setEmployeeCreated] = useState(false);
-
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -16,7 +14,6 @@ const App = () => {
   };
 
   const handleSave = () => {
-    setEmployeeCreated(true);
     handleCloseModal();
   };
 
@@ -39,9 +36,9 @@ const App = () => {
           modalTitle="I'm a modal to customize !"
           onSave={handleSave}
           onCancel={handleCancel}
-          employeeCreated={employeeCreated}
-         
+          showButtons={false} // Contrôle l'affichage des boutons
         >
+          {/* Vous pouvez également ajouter d'autres contenus dans la modal ici */}
         </Modal>
       )}
     </div>
