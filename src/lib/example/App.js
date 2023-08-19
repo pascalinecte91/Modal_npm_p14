@@ -36,9 +36,8 @@ const App = () => {
           modalTitle="I'm a modal to customize !"
           onSave={handleSave}
           onCancel={handleCancel}
-          showButtons={false} // Contrôle l'affichage des boutons
+          showButtons={true} // Contrôle l'affichage des boutons
         >
-          {/* Vous pouvez également ajouter d'autres contenus dans la modal ici */}
         </Modal>
       )}
     </div>

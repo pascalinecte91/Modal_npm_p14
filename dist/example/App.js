@@ -52,7 +52,7 @@ var App = function App() {
       modalTitle: "I'm a modal to customize !",
       onSave: handleSave,
       onCancel: handleCancel,
-      showButtons: false // Contrôle l'affichage des boutons
+      showButtons: true // Contrôle l'affichage des boutons
     })]
   });
 };
