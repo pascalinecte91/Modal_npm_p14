@@ -12,6 +12,7 @@ var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+// Définition du composant Modal avec les propriétés passées en paramètres
 var Modal = function Modal(_ref) {
   var isOpen = _ref.isOpen,
     onClose = _ref.onClose,
@@ -25,22 +26,31 @@ var Modal = function Modal(_ref) {
     onSave = _ref.onSave,
     onCancel = _ref.onCancel,
     actionLabel = _ref.actionLabel;
-  var modalRef = (0, _react.useRef)(null);
-  var triggerRef = (0, _react.useRef)(null);
+  var modalRef = (0, _react.useRef)(null); // Référence à l'élément DOM de la modal
+  var triggerRef = (0, _react.useRef)(null); // Référence à l'élément DOM qui a déclenché l'ouverture de la modal
+
   (0, _react.useEffect)(function () {
+    // Gestion du focus lorsque la modal s'ouvre ou se ferme
     if (isOpen) {
-      triggerRef.current = document.activeElement;
-      modalRef.current.focus();
+      triggerRef.current = document.activeElement; // Stocke l'élément qui avait le focus
+      modalRef.current.focus(); // Donne le focus à l'élément de la modal
     } else if (triggerRef.current) {
-      triggerRef.current.focus();
+      triggerRef.current.focus(); // Restaure le focus à l'élément précédent
       triggerRef.current = null;
     }
   }, [isOpen]);
+
+  // Gestion du clic sur le fond de la modal ou le bouton de fermeture
   var handleBackdropClick = function handleBackdropClick(event) {
-    if (event.target === event.currentTarget || event.target.className === "close-button") {
-      onClose();
+    if (event.target === event.currentTarget ||
+    // Clic sur le fond de la modal
+    event.target.className === "close-button" // Clic sur le bouton de fermeture
+    ) {
+      onClose(); // Appelle la fonction de fermeture
     }
   };
+
+  // Rendu de la modal (si elle est ouverte)
   return isOpen ? /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
     className: "modal-backdrop ".concat(isOpen ? "open" : ""),
     onClick: handleBackdropClick,
@@ -64,7 +74,7 @@ var Modal = function Modal(_ref) {
         }), " ", showButtons && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
           children: [actionLabel && /*#__PURE__*/(0, _jsxRuntime.jsxs)("p", {
             className: "modal-identity",
-            children: ["Would you like to ", actionLabel, " ", /*#__PURE__*/(0, _jsxRuntime.jsxs)("strong", {
+            children: ["Would you like to register ", actionLabel, " ", /*#__PURE__*/(0, _jsxRuntime.jsxs)("strong", {
               children: [" ", firstName, " ", lastName, " "]
             }), " "]
           }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
@@ -86,8 +96,10 @@ var Modal = function Modal(_ref) {
         })]
       })
     })
-  }) : null;
+  }) : null; // Rendu nul si la modal est fermée
 };
+
+// Définition des types attendus pour les propriétés du composant
 Modal.propTypes = {
   isOpen: _propTypes.default.bool.isRequired,
   onClose: _propTypes.default.func.isRequired,

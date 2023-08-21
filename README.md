@@ -2,7 +2,8 @@
 
 # Modal
 
-Le plugin Modal vous permet d’afficher une modal avec un message de confirmation après la création d’un employé dans votre projet React.
+Ce plugin modal offre une solution simple et flexible pour intégrer des modales de confirmation dans des applications React.
+Avec un simple ajout à votre code, vous pouvez afficher des modales personnalisées avec des options pour personnaliser l'apparence et le comportement.
 
 ## Installation
 
@@ -20,7 +21,7 @@ yarn add banby-modal-customize-react
 ## Utilisez la modal :
 ```jsx
 import React, { useState } from "react";
-import Modal from "chemin-vers-la-modal-externe";
+import Modal from "banby-modal-customize-react";
 
 const NomComposantAuChoix = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -73,7 +74,7 @@ Le composant Modal accepte les props suivantes :
 
 ---
 ## Affichages de la modal 
-## Exemples à suivre en selectionnant les Props de votre choix :
+## 4 exemples en selectionnant les Props :
 
 ### 1 . Avec Titre + boutons pour utilisation d'un formulaire:
 Pour afficher la modal avec un titre et des boutons "Enregistrer" et "Annuler", utilisez les propriétés `modalTitle` et `showButtons` :
@@ -85,21 +86,24 @@ Pour afficher la modal avec un titre et des boutons "Enregistrer" et "Annuler", 
 <Modal
   isOpen={modalOpen}
   onClose={handleCloseModal}
+  // fonctions optionnelles
   modalTitle="Modal avec Titre et Boutons"
   showButtons={true}
   onSave={handleSave}
   onCancel={handleCancel}
-  //actionLabel={actionLabel}
+  actionLabel={actionLabel}
 >
 </Modal>
 ```
 
 ### 2. Titre seul :  utilisez la propriété modalTitle avec showButtons à false :
+Pour afficher la modal avec un titre, utilisez la propriété `modalTitle` :
 
 ```jsx
 <Modal
   isOpen={modalOpen}
   onClose={handleCloseModal}
+  // fonctions optionnelles
   modalTitle="Titre de la Modal"
   showButtons={false}
 >
@@ -108,39 +112,46 @@ Pour afficher la modal avec un titre et des boutons "Enregistrer" et "Annuler", 
 ![modal 2](./public/modal_example2.jpg)
 
 
-### 2. Titre +  autres Props (firsTname & lastNale) par exepmle sans buttons: 
-
+### 3. Autres Props (firsTname & lastName) par exemple + boutons: 
+Pour afficher la modal avec un nom, un prénom, utilisez la propriété `firstName` & `lastName`:
 ```jsx
 <Modal
   isOpen={modalOpen}
   onClose={handleCloseModal}
+  // fonctions optionnelles
   firstName="john" // votre choix
   lastName="Doe" // votre choix
   modalTitle="Titre de la Modal"
-  showButtons={false}
->
-</Modal>
-```
-![modal 2](./public/modal_example2.jpg)
-
-
-### 2. Autres Props (firsTname & lastName) par exemple + boutons: 
-
-```jsx
-<Modal
-  isOpen={modalOpen}
-  onClose={handleCloseModal}
-  firstName="john" // votre choix
-  lastName="Doe" // votre choix
-  modalTitle="Titre de la Modal"
-  showButtons={false}
+  showButtons={true}
 >
 </Modal>
 ```
 ![modal 3](./public/modal_example3.jpg)
 
-
+### 4. en utilisant la props modalStyle
+Pour afficher la modal avec d'autres styles, utilisez la propriété `modalStyle` :
+```jsx
+<Modal
+  isOpen={modalOpen}
+  onClose={handleCloseModal}
+  // fonction optionnelle
+  modalStyle={{
+    width: "500px",
+    backgroundColor: "blue",
+    padding: "20px",
+    borderRadius: "50px",
+    boxShadow: "4px 2px 4px rgba(0, 0, 0, 0.1)",
+    // Ajoutez d'autres propriétés de style ici
+  }}
+  showButtons={true}
+>
+</Modal>
 ```
+![modal 4](./public/modal_example4.jpg)
+  
+
+A vous de profiter des possiblités ! 
+
 ## Licence
 
 Ce package est distribué sous la [LICENCE](https://opensource.org/licenses/MIT) MIT. Veuillez consulter le fichier LICENSE pour plus d'informations.
